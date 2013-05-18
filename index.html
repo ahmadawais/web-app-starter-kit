@@ -50,6 +50,7 @@
 	            <li>A customized registration email.</li>
 	            <li>A disabled admin bar for all users.</li>
 	            <li>No access to the back-end for anyone except admins.</li>
+	            <li>User-specific navigation.</li>
 	            <li>A logout link.</li>
 	        </ul>
 
@@ -117,9 +118,11 @@
 
 	        <h1 class="text-center">Templates</h1>
 
-	        <p>You'll probably have content that you'll only want users to view if they're logged in. You might also have content that you only want people to have access to if they're logged out (like a password reset form).</p>
+	        <p>You'll probably have content that you'll only want users to view if they're logged in. You might also have content that you only want people to have access to if they're logged out (like a password reset form or the login screen).</p>
 
 	        <p>Simply select the creatively named <code>Logged In Only</code> or <code>Logged Out Only</code> page templates in the WordPress content editor and type away.</p>
+
+	        <p>By default, users who are (or aren't) logged in see a blank screen. You should add your own message or content to the template.</p>
 	        
 	        <hr>
 
@@ -135,18 +138,40 @@
 
 	        <h1 class="text-center">Hiding the Back-End</h1>
 
-	        <p>Your users should never know they're on a WordPress site when they're using your app. By default, WordPress for Web Apps disables the admin bar is disabled for all users.</p>
+	        <p>Your users should never know they're on a WordPress site when they're using your app. By default, WordPress for Web Apps disables the admin bar for all users.</p>
 
 	        <p>And if someone tries to access the back-end login screen, they'll be automatically redirected back to the homepage. (Unfortunately, that means you have to login from the homescreen before accessing the admin panel.)</p>
 
 	        <hr>
 
 
+	        <h1 class="text-center">User-Specific Navigation</h1>
+
+	        <p>You may want to show different navigation elements to users who are logged in versus those who are not. Simply include the following code in your <code>header.php</code> file:</p>
+
+	        <pre>&lt;?php if (is_user_logged_in()) : ?&gt;
+    &lt;!-- Logged In Navigation --&gt;
+&lt;?php else : ?&gt;
+    &lt;!-- Logged Out Navigation --&gt;
+&lt;?php endif; ?&gt;</pre>
+
+            <p>To display the current user's username, use this script:</p>
+
+            <pre>&lt;?php $current_user = wp_get_current_user(); echo $current_user-&gt;user_login; ?&gt;</pre>
+
+	        <hr>
+
+
 	        <h1 class="text-center">Logout Links</h1>
 
-	        <p>WordPress provides a built-in logout link function: <code>&lt;?php echo wp_logout_url( home_url() ); ?&gt;</code>. Simply add that as the <code>href</code> value to any link to log a user out and redirect them to the homepage.</p>
+	        <p>WordPress provides a built-in logout link function:</p>
+
+	        <pre>&lt;?php echo wp_logout_url( home_url() ); ?&gt;</pre>
+
+	        <p>Simply add that as the <code>href</code> value to any link to log a user out and redirect them to the homepage.</p>
 
 	        <p>You can't use PHP scripts in the WordPress content editor, though. If you'd like to add a logout link that way, WordPress for Web Apps includes a shortcode you can use instead: <code>[logout_link]</code>.</p>
+
 
         </article>
 	</section>

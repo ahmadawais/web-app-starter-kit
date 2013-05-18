@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>WordPress for Web Apps</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="kraken.css" type="text/css" />
+
+    <!-- HTML5 Shim for IE 6-8 -->
+    <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+	<section class="space-bottom bg-gray">
+	    <article class="container text-center">
+
+            <h1 class="text-taller no-space-bottom"><i class="icon-logo"></i> WordPress for Web Apps</h1>
+            <p class="text-tall text-muted">A collection of functions, templates and plugins that transform WordPress into a web app engine.</p>
+
+	        <p><a class="btn btn-blue btn-jumbo" href="https://github.com/cferdinandi/web-app-starter-kit/archive/master.zip">Download WP for Web Apps</a></p>
+
+	        <p>
+	            <span class="text-small">
+	                <a href="https://github.com/cferdinandi/web-app-starter-kit"><i class="icon-github"></i> GitHub Project</a>
+	                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	                <a href="#more"><i class="icon-docs"></i> Getting Started</a>
+                </span>
+            </p>
+
+        </article>
+    </section>
+
+	<section class="space-bottom">
+	    <article class="container">
+
+
+	        <h1 class="text-center" id="more">Essential Components</h1>
+
+	        <p>WordPress for Web Apps comes with the essential components you need to power your web app with WordPress:</p>
+
+	        <ul>
+	            <li>A login form.</li>
+	            <li>A sign-up form.</li>
+	            <li>A password reset form.</li>
+	            <li>A password change form.</li>
+	            <li>Templates for content that can only be viewed while logged in (or logged out).</li>
+	            <li>A customized registration email.</li>
+	            <li>A disabled admin bar for all users.</li>
+	            <li>No access to the back-end for anyone except admins.</li>
+	            <li>A logout link.</li>
+	        </ul>
+
+	        <hr>
+
+
+	        <h1 class="text-center">How to Get Started</h1>
+
+	        <p>Getting started with WordPress for Web Apps is as simple as adding a few files to your WordPress theme.</p>
+
+	        <ol>
+	            <li>If your theme does not have a functions.php file, add the included file to your theme. If functions.php already exists, copy-and-paste the text from the included file into it.</li>
+	            <li>Add the <code>logged-in-only.php</code> and <code>logged-out-only.php</code> page templates to your theme directory.</li>
+	            <li>Upload and install the <code>registration-email-plugin.zip</code> file from the plugin menu in the admin panel.</li>
+	        </ol>
+
+	        <p>That's it! Keep reading to learn how to take advantage of the built-in features.</p>
+
+	        <hr>
+
+
+	        <h1 class="text-center">Forms</h1>
+
+	        <p>There are two ways to add forms to your app:</p>
+
+	        <ol>
+	            <li>With a shortcode in the WordPress content editor.</li>
+	            <li>With a function in a PHP template.</li>
+	        </ol>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>&nbsp;</th>
+                        <th>Shortcode</th>
+                        <th>PHP Function</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Login Form</td>
+                        <td><code>[loginform]</code></td>
+                        <td><code>&lt;?php echo wpwebapp_login(); ?&gt;</code></td>
+                    </tr>
+                    <tr>
+                        <td>Sign-Up Form</td>
+                        <td><code>[signupform]</code></td>
+                        <td><code>&lt;?php echo wpwebapp_signupform(); ?&gt;</code></td>
+                    </tr>
+                    <tr>
+                        <td>Password Reset</td>
+                        <td><code>[pwreset]</code></td>
+                        <td><code>&lt;?php echo wpwebapp_pwreset(); ?&gt;</code></td>
+                    </tr>
+                    <tr>
+                        <td>Password Change</td>
+                        <td><code>[pwchangeform]</code></td>
+                        <td><code>&lt;?php echo wpwebapp_pwform(); ?&gt;</code></td>
+                    </tr>
+                </tbody>
+            </table>
+	        
+	        <hr>
+
+
+	        <h1 class="text-center">Templates</h1>
+
+	        <p>You'll probably have content that you'll only want users to view if they're logged in. You might also have content that you only want people to have access to if they're logged out (like a password reset form).</p>
+
+	        <p>Simply select the creatively named <code>Logged In Only</code> or <code>Logged Out Only</code> page templates in the WordPress content editor and type away.</p>
+	        
+	        <hr>
+
+
+	        <h1 class="text-center">Registration Email</h1>
+
+	        <p>Overriding the default registration email that WordPress sends new users requires a plugin. Just activate the included Registration Email plugin and you're good to go.</p>
+
+	        <p>Open it up in your favorite text editor to change the wording.</p>
+
+	        <hr>
+
+
+	        <h1 class="text-center">Hiding the Back-End</h1>
+
+	        <p>Your users should never know they're on a WordPress site when they're using your app. By default, WordPress for Web Apps disables the admin bar is disabled for all users.</p>
+
+	        <p>And if someone tries to access the back-end login screen, they'll be automatically redirected back to the homepage. (Unfortunately, that means you have to login from the homescreen before accessing the admin panel.)</p>
+
+	        <hr>
+
+
+	        <h1 class="text-center">Logout Links</h1>
+
+	        <p>WordPress provides a built-in logout link function: <code>&lt;?php echo wp_logout_url( home_url() ); ?&gt;</code>. Simply add that as the <code>href</code> value to any link to log a user out and redirect them to the homepage.</p>
+
+	        <p>You can't use PHP scripts in the WordPress content editor, though. If you'd like to add a logout link that way, WordPress for Web Apps includes a shortcode you can use instead: <code>[logout_link]</code>.</p>
+
+        </article>
+	</section>
+
+	<footer class="bg-gray">
+        <article class="container">
+
+            <p class="text-small text-muted text-center">Built by <a href="http://gomakethings.com">Chris Ferdinandi</a>. Licensed under <a href="http://www.wtfpl.net/">WTFPL</a>.</p>
+
+            <p class="text-small text-muted text-center">WordPress for Web Apps is an add-on for <a href="http://cferdinandi.github.com/kraken/">Kraken</a> and <a href="http://cferdinandi.github.com/kraken-for-wordpress/">Kraken for WordPress</a>, a lightweight, mobile-first boilerplate for front-end WordPress developers. It works great as a standalone product, too.</p>
+
+        </article>
+	</footer>
+
+
+    <!-- Javascript -->
+    <script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
+    <script type='text/javascript' src='js/kraken.js'></script>
+
+</body>
+</html>

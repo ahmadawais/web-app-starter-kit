@@ -20,7 +20,7 @@
             <h1 class="text-taller no-space-bottom"><i class="icon-logo"></i> WordPress for Web Apps</h1>
             <p class="text-tall text-muted">A collection of functions, templates and plugins that transform WordPress into a web app engine.</p>
 
-	        <p><a class="btn btn-blue btn-jumbo" href="https://github.com/cferdinandi/web-app-starter-kit/archive/master.zip">Download WP for Web Apps</a></p>
+	        <p><a class="btn btn-blue btn-jumbo" href="https://github.com/cferdinandi/web-app-starter-kit/archive/master.zip">Download WP for Web Apps 2</a></p>
 
 	        <p>
 	            <span class="text-small">
@@ -62,7 +62,7 @@
 	        <p>Getting started with WordPress for Web Apps is as simple as adding a few files to your WordPress theme.</p>
 
 	        <ol>
-	            <li>If your theme does not have a <code>functions.php</code> file, add the included file to your theme. If <code>functions.php</code> already exists, copy-and-paste the text from the included file into it.</li>
+	            <li>If your theme does not have a <code>functions.php</code> file, add the included file to your theme. If <code>functions.php</code> already exists, copy-and-paste the text from the included file into it. With either option, add the <code>functions</code> folder to your theme files.</li>
 	            <li>Add the <code>logged-in-only.php</code> and <code>logged-out-only.php</code> page templates to your theme directory.</li>
 	            <li>Upload and install the <code>registration-email-plugin.zip</code> file from the plugin menu in the admin panel.</li>
 	        </ol>
@@ -118,7 +118,7 @@
 
 	        <h1 class="text-center">Templates</h1>
 
-	        <p>You'll probably have content that you'll only want users to view if they're logged in. You might also have content that you only want people to have access to if they're logged out (like a password reset form or the login screen).</p>
+	        <p>You may have content that you only want users to view if they're logged in. You might also have content that you only want people to have access to if they're logged out (like a password reset form or the login screen).</p>
 
 	        <p>Simply select the creatively named <code>Logged In Only</code> or <code>Logged Out Only</code> page templates in the WordPress content editor and type away.</p>
 
@@ -166,11 +166,13 @@
 
 	        <p>WordPress provides a built-in logout link function:</p>
 
-	        <pre>&lt;?php echo wp_logout_url( home_url() ); ?&gt;</pre>
+	        <pre> &lt;a href="&lt;?php echo wp_logout_url( home_url() ); ?&gt;"&gt;Sign Out&lt;/a&gt;</pre>
 
 	        <p>Simply add that as the <code>href</code> value to any link to log a user out and redirect them to the homepage.</p>
 
 	        <p>You can't use PHP scripts in the WordPress content editor, though. If you'd like to add a logout link that way, WordPress for Web Apps includes a shortcode you can use instead: <code>[logout_link]</code>.</p>
+
+	        <pre>&lt;a href="[logout_link]"&gt;Sign Out&lt;/a&gt;</pre>
 
 
         </article>

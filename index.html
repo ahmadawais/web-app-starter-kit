@@ -26,7 +26,7 @@
 	            <span class="text-small">
 	                <a href="https://github.com/cferdinandi/web-app-starter-kit"><i class="icon-github"></i> GitHub Project</a>
 	                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	                <a href="#more"><i class="icon-docs"></i> Getting Started</a>
+	                <a class="scroll" data-speed="300" href="#more"><i class="icon-docs"></i> Getting Started</a>
                 </span>
             </p>
 
@@ -159,15 +159,15 @@
 
 	        <p>You may want to show different navigation elements to users who are logged in versus those who are not. Simply include the following code in your <code>header.php</code> file:</p>
 
-	        <pre>&lt;?php if (is_user_logged_in()) : ?&gt;
+	        <pre><code class="language-php">&lt;?php if (is_user_logged_in()) : ?&gt;
     &lt;!-- Logged In Navigation --&gt;
 &lt;?php else : ?&gt;
     &lt;!-- Logged Out Navigation --&gt;
-&lt;?php endif; ?&gt;</pre>
+&lt;?php endif; ?&gt;</code></pre>
 
             <p>To display the current user's username, use this script:</p>
 
-            <pre>&lt;?php $current_user = wp_get_current_user(); echo $current_user-&gt;user_login; ?&gt;</pre>
+            <pre><code class="language-php">&lt;?php $current_user = wp_get_current_user(); echo $current_user-&gt;user_login; ?&gt;</code></pre>
 
 	        <hr>
 
@@ -176,13 +176,13 @@
 
 	        <p>WordPress provides a built-in logout link function:</p>
 
-	        <pre> &lt;a href="&lt;?php echo wp_logout_url( home_url() ); ?&gt;"&gt;Sign Out&lt;/a&gt;</pre>
+	        <pre><code class="language-php">&lt;a href="&lt;?php echo wp_logout_url( home_url() ); ?&gt;"&gt;Sign Out&lt;/a&gt;</code></pre>
 
 	        <p>Simply add that as the <code>href</code> value to any link to log a user out and redirect them to the homepage.</p>
 
 	        <p>You can't use PHP scripts in the WordPress content editor, though. If you'd like to add a logout link that way, WordPress for Web Apps includes a shortcode you can use instead: <code>[logout_link]</code>.</p>
 
-	        <pre>&lt;a href="[logout_link]"&gt;Sign Out&lt;/a&gt;</pre>
+	        <pre><code class="language-php">&lt;a href="[logout_link]"&gt;Sign Out&lt;/a&gt;</code></pre>
 
 
         </article>

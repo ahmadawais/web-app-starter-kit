@@ -37,7 +37,7 @@
 	    <article class="container">
 
 
-	        <h1 class="text-center" id="more">Essential Components</h1>
+	        <h1 class="text-center">Essential Components</h1>
 
 	        <p>WordPress for Web Apps comes with the essential components you need to power your web app with WordPress:</p>
 
@@ -57,133 +57,27 @@
 	        <hr>
 
 
-	        <h1 class="text-center">How to Use WordPress for Web Apps</h1>
+            <h1 class="text-center" id="more">Getting Started</h1>
 
-	        <p>Getting started with WordPress for Web Apps is as simple as adding a few files to your WordPress theme.</p>
+            <p>Learn how to use WordPress for Web Apps.</p>
 
-	        <h2>1. Add the functions to your theme.</h2>
-
-	        <p>If your theme does not have a <code>functions.php</code> file, add the included file to your theme. If <code>functions.php</code> already exists, copy-and-paste the text from the included file into it. With either option, add the <code>functions</code> folder to your theme files.</p>
-
-
-	        <h2>2. Add the templates to your theme.</h2>
-
-	        <p>Add the <code>logged-in-only.php</code> and <code>logged-out-only.php</code> page templates to your theme directory.</p>
-
-
-	        <h2>3. Install the plugin.</h2>
-
-	        <p>Upload and install the <code>registration-email-plugin.zip</code> file from the plugin menu in the admin panel.</p>
-
-	        <h2>4. Pat yourself on the back.</h2>
-
-	        <p>Seriously, you're done. Nice work! Keep reading to learn how to take advantage of the built-in features.</p>
-
-	        <hr>
-
-
-	        <h1 class="text-center">Forms</h1>
-
-	        <p>There are two ways to add forms to your app:</p>
-
-	        <ol>
-	            <li>With a shortcode in the WordPress content editor.</li>
-	            <li>With a function in a PHP template.</li>
-	        </ol>
-
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>&nbsp;</th>
-                        <th>Shortcode</th>
-                        <th>PHP Function</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Login Form</td>
-                        <td><code>[loginform]</code></td>
-                        <td><code>&lt;?php echo wpwebapp_login(); ?&gt;</code></td>
-                    </tr>
-                    <tr>
-                        <td>Sign-Up Form</td>
-                        <td><code>[signupform]</code></td>
-                        <td><code>&lt;?php echo wpwebapp_signupform(); ?&gt;</code></td>
-                    </tr>
-                    <tr>
-                        <td>Password Reset</td>
-                        <td><code>[pwreset]</code></td>
-                        <td><code>&lt;?php echo wpwebapp_pwreset(); ?&gt;</code></td>
-                    </tr>
-                    <tr>
-                        <td>Password Change</td>
-                        <td><code>[pwchangeform]</code></td>
-                        <td><code>&lt;?php echo wpwebapp_pwform(); ?&gt;</code></td>
-                    </tr>
-                </tbody>
-            </table>
-	        
-	        <hr>
-
-
-	        <h1 class="text-center">Templates</h1>
-
-	        <p>You may have content that you only want users to view if they're logged in. You might also have content that you only want people to have access to if they're logged out (like a password reset form or the login screen).</p>
-
-	        <p>Simply select the creatively named <code>Logged In Only</code> or <code>Logged Out Only</code> page templates in the WordPress content editor and type away.</p>
-
-	        <p>Users who are (or aren't) logged in will get redirected to the homepage.</p>
-	        
-	        <hr>
-
-
-	        <h1 class="text-center">Registration Email</h1>
-
-	        <p>Overriding the default registration email that WordPress sends new users requires a plugin. Just activate the included Registration Email plugin and you're good to go.</p>
-
-	        <p>Open it up in your favorite text editor to change the wording.</p>
-
-	        <hr>
-
-
-	        <h1 class="text-center">Hiding the Back-End</h1>
-
-	        <p>Your users should never know they're on a WordPress site when they're using your app. By default, WordPress for Web Apps disables the admin bar for all users.</p>
-
-	        <p>And if someone tries to access the back-end login screen, they'll be automatically redirected back to the homepage. (Unfortunately, that means you have to login from the homescreen before accessing the admin panel.)</p>
-
-	        <hr>
-
-
-	        <h1 class="text-center">User-Specific Navigation</h1>
-
-	        <p>You may want to show different navigation elements to users who are logged in versus those who are not. Simply include the following code in your <code>header.php</code> file:</p>
-
-	        <pre><code class="language-php">&lt;?php if (is_user_logged_in()) : ?&gt;
-    &lt;!-- Logged In Navigation --&gt;
-&lt;?php else : ?&gt;
-    &lt;!-- Logged Out Navigation --&gt;
-&lt;?php endif; ?&gt;</code></pre>
-
-            <p>To display the current user's username, use this script:</p>
-
-            <pre><code class="language-php">&lt;?php $current_user = wp_get_current_user(); echo $current_user-&gt;user_login; ?&gt;</code></pre>
-
-	        <hr>
-
-
-	        <h1 class="text-center">Logout Links</h1>
-
-	        <p>WordPress provides a built-in logout link function:</p>
-
-	        <pre><code class="language-php">&lt;a href="&lt;?php echo wp_logout_url( home_url() ); ?&gt;"&gt;Sign Out&lt;/a&gt;</code></pre>
-
-	        <p>Simply add that as the <code>href</code> value to any link to log a user out and redirect them to the homepage.</p>
-
-	        <p>You can't use PHP scripts in the WordPress content editor, though. If you'd like to add a logout link that way, WordPress for Web Apps includes a shortcode you can use instead: <code>[logout_link]</code>.</p>
-
-	        <pre><code class="language-php">&lt;a href="[logout_link]"&gt;Sign Out&lt;/a&gt;</code></pre>
-
+            <div class="row">
+                <div class="grid-3">
+                    <ol>
+                        <li><a href="installation.html">Installation</a></li>
+                        <li><a href="forms.html">Forms</a></li>
+                        <li><a href="templates.html">Templates</a></li>
+                        <li><a href="registration.html">Registration Email</a></li>
+                    </ol>
+                </div>
+                <div class="grid-3">
+                    <ol start="5">
+                        <li><a href="backend.html">Hiding the Back-End</a></li>
+                        <li><a href="navigation.html">User-Specific Navigation</a></li>
+                        <li><a href="logout.html">Logout Links</a></li>
+                    </ol>
+                </div>
+            </div>
 
         </article>
 	</section>

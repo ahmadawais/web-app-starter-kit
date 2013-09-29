@@ -2,21 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Registration Email | WordPress for Web Apps</title>
+    <title>User Experience | WordPress for Web Apps</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Favicon -->
-    <link rel="shortcut icon" type="image/ico" href="img/favicon.ico">
-
-    <!-- Apple Touch Icons -->
-    <link rel="apple-touch-icon" href="<?php bloginfo('stylesheet_directory'); ?>/img/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="img/apple-touch-icon-144.png">
-
-    <!-- MS Homescreen Icons -->
-    <meta name="msapplication-TileColor" content="#0088cc">
-    <meta name="msapplication-TileImage" content="img/ms-touch-icon.png">
 
     <!-- stylesheets -->
     <link rel="stylesheet" href="kraken.css" type="text/css" >
@@ -40,11 +27,26 @@
 	<section class="space-bottom">
 	    <article class="container">
 
-            <h1 class="text-center">Registration Email</h1>
+            <h1 class="text-center">User Experience</h1>
 
-            <p>Overriding the default registration email that WordPress sends new users requires a plugin. Just activate the included Registration Email plugin and you're good to go.</p>
+            <p>WordPress for Web Apps takes a different approach to the signup, login and password reset processes than the default WordPress settings.</p>
 
-            <p>Open it up in your favorite text editor to change the wording.</p>
+            <p>These changes provide a better user experience and are more inline with external best-practices.</p>
+
+
+            <h2 class="text-center">Login</h2>
+
+            <p>WordPress for Web Apps lets users login with either their username or their email address. Don't remember your username? No problem!</p>
+
+
+            <h2 class="text-center">Signup</h2>
+
+            <p>Unlike the WordPress default, users get to create their own password at signup. After choosing a username and password, and providing an email address, they're logged straight in. No waiting for a confirmation email, and no more passwords emailed in plain text (which is really bad for security).</p>
+
+
+            <h2 class="text-center">Password Resets</h2>
+
+            <p>Users who forget their password can provide their username or email address to have a reset URL sent to them. Reset URLs are only good for 24 hours by default and are unique to the user (better for security). After clicking the link, users get to pick their own new password and get logged right in.</p>
 
             <hr>
 
@@ -55,16 +57,15 @@
                 <div class="grid-3">
                     <ol class="no-space-bottom">
                         <li><a href="installation.html">Installation</a></li>
+                        <li><span class="text-muted">User Experience</span></li>
                         <li><a href="forms.html">Forms</a></li>
-                        <li><a href="templates.html">Templates</a></li>
-                        <li><span class="text-muted">Registration Email</span></li>
                     </ol>
                 </div>
                 <div class="grid-3">
-                    <ol start="5">
-                        <li><a href="backend.html">Hiding the Back-End</a></li>
-                        <li><a href="navigation.html">User-Specific Navigation</a></li>
-                        <li><a href="logout.html">Logout Links</a></li>
+                    <ol start="4">
+                        <li><a href="user-access.html">User Access</a></li>
+                        <li><a href="navigation.html">Navigation</a></li>
+                        <li><a href="settings.html">Settings</a></li>
                     </ol>
                 </div>
             </div>

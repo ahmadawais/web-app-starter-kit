@@ -5,19 +5,6 @@
     <title>Forms | WordPress for Web Apps</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Favicon -->
-    <link rel="shortcut icon" type="image/ico" href="img/favicon.ico">
-
-    <!-- Apple Touch Icons -->
-    <link rel="apple-touch-icon" href="<?php bloginfo('stylesheet_directory'); ?>/img/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="img/apple-touch-icon-144.png">
-
-    <!-- MS Homescreen Icons -->
-    <meta name="msapplication-TileColor" content="#0088cc">
-    <meta name="msapplication-TileImage" content="img/ms-touch-icon.png">
-
     <!-- stylesheets -->
     <link rel="stylesheet" href="kraken.css" type="text/css" >
 
@@ -46,7 +33,7 @@
 
             <ol>
                 <li>With a shortcode in the WordPress content editor.</li>
-                <li>With a function in a PHP template.</li>
+                <li>With a function in one of your theme template files.</li>
             </ol>
 
             <table class="table">
@@ -60,23 +47,23 @@
                 <tbody>
                     <tr>
                         <td>Login Form</td>
-                        <td><code>[loginform]</code></td>
-                        <td><code>&lt;?php echo wpwebapp_login(); ?&gt;</code></td>
+                        <td><code>[wpwa_login_form]</code></td>
+                        <td><code>&lt;?php echo wpwebapp_form_login(); ?&gt;</code></td>
                     </tr>
                     <tr>
                         <td>Sign-Up Form</td>
-                        <td><code>[signupform]</code></td>
-                        <td><code>&lt;?php echo wpwebapp_signupform(); ?&gt;</code></td>
+                        <td><code>[wpwa_signup_form]</code></td>
+                        <td><code>&lt;?php echo wpwebapp_form_signup(); ?&gt;</code></td>
                     </tr>
                     <tr>
-                        <td>Password Reset</td>
-                        <td><code>[pwreset]</code></td>
-                        <td><code>&lt;?php echo wpwebapp_pwreset(); ?&gt;</code></td>
+                        <td>Change Password</td>
+                        <td><code>[wpwa_pw_change_form]</code></td>
+                        <td><code>&lt;?php echo wpwebapp_form_pw_change(); ?&gt;</code></td>
                     </tr>
                     <tr>
-                        <td>Password Change</td>
-                        <td><code>[pwchangeform]</code></td>
-                        <td><code>&lt;?php echo wpwebapp_pwform(); ?&gt;</code></td>
+                        <td>Forgot Password</td>
+                        <td><code>[wpwa_forgot_pw_form]</code></td>
+                        <td><code>&lt;?php echo wpwebapp_form_pw_forgot_and_reset(); ?&gt;</code></td>
                     </tr>
                 </tbody>
             </table>
@@ -90,16 +77,15 @@
                 <div class="grid-3">
                     <ol class="no-space-bottom">
                         <li><a href="installation.html">Installation</a></li>
+                        <li><a href="ux.html">User Experience</a></li>
                         <li><span class="text-muted">Forms</span></li>
-                        <li><a href="templates.html">Templates</a></li>
-                        <li><a href="registration.html">Registration Email</a></li>
                     </ol>
                 </div>
                 <div class="grid-3">
-                    <ol start="5">
-                        <li><a href="backend.html">Hiding the Back-End</a></li>
-                        <li><a href="navigation.html">User-Specific Navigation</a></li>
-                        <li><a href="logout.html">Logout Links</a></li>
+                    <ol start="4">
+                        <li><a href="user-access.html">User Access</a></li>
+                        <li><a href="navigation.html">Navigation</a></li>
+                        <li><a href="settings.html">Settings</a></li>
                     </ol>
                 </div>
             </div>

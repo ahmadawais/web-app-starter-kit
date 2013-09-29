@@ -2,21 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Hiding the Back-End | WordPress for Web Apps</title>
+    <title>User Access | WordPress for Web Apps</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Favicon -->
-    <link rel="shortcut icon" type="image/ico" href="img/favicon.ico">
-
-    <!-- Apple Touch Icons -->
-    <link rel="apple-touch-icon" href="<?php bloginfo('stylesheet_directory'); ?>/img/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="img/apple-touch-icon-144.png">
-
-    <!-- MS Homescreen Icons -->
-    <meta name="msapplication-TileColor" content="#0088cc">
-    <meta name="msapplication-TileImage" content="img/ms-touch-icon.png">
 
     <!-- stylesheets -->
     <link rel="stylesheet" href="kraken.css" type="text/css" >
@@ -40,11 +27,13 @@
 	<section class="space-bottom">
 	    <article class="container">
 
-            <h1 class="text-center">Hiding the Back-End</h1>
+            <h1 class="text-center">User Access</h1>
 
-            <p>Your users should never know they're on a WordPress site when they're using your app. By default, WordPress for Web Apps disables the admin bar for all users.</p>
+            <p>You may have content that you only want users to view if they're logged in. You might also have content that you only want people to have access to if they're logged out (like a password reset form or the login screen).</p>
 
-            <p>And if someone tries to access the back-end login screen, they'll be automatically redirected back to the homepage. (Unfortunately, that means you have to login from the homescreen before accessing the admin panel.)</p>
+            <p class="text-center"><img src="img/user-access.png" alt="Screenshot of the user access setting choices"></p>
+
+            <p>Simply select the appropriate user access setting from the options menu in the sidebar when you create a page. WordPress for Web Apps handles the rest, redirecting users to a landing page if they don't have permission to view the content.</p>
 
             <hr>
 
@@ -55,16 +44,15 @@
                 <div class="grid-3">
                     <ol class="no-space-bottom">
                         <li><a href="installation.html">Installation</a></li>
+                        <li><a href="ux.html">User Experience</a></li>
                         <li><a href="forms.html">Forms</a></li>
-                        <li><a href="templates.html">Templates</a></li>
-                        <li><a href="registration.html">Registration Email</a></li>
                     </ol>
                 </div>
                 <div class="grid-3">
-                    <ol start="5">
-                        <li><span class="text-muted">Hiding the Back-End</span></li>
-                        <li><a href="navigation.html">User-Specific Navigation</a></li>
-                        <li><a href="logout.html">Logout Links</a></li>
+                    <ol start="4">
+                        <li><span class="text-muted">User Access</span></li>
+                        <li><a href="navigation.html">Navigation</a></li>
+                        <li><a href="settings.html">Settings</a></li>
                     </ol>
                 </div>
             </div>

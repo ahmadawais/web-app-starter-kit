@@ -2,21 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>User-Specific Navigation | WordPress for Web Apps</title>
+    <title>Navigation | WordPress for Web Apps</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Favicon -->
-    <link rel="shortcut icon" type="image/ico" href="img/favicon.ico">
-
-    <!-- Apple Touch Icons -->
-    <link rel="apple-touch-icon" href="<?php bloginfo('stylesheet_directory'); ?>/img/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="img/apple-touch-icon-144.png">
-
-    <!-- MS Homescreen Icons -->
-    <meta name="msapplication-TileColor" content="#0088cc">
-    <meta name="msapplication-TileImage" content="img/ms-touch-icon.png">
 
     <!-- stylesheets -->
     <link rel="stylesheet" href="kraken.css" type="text/css" >
@@ -40,19 +27,43 @@
 	<section class="space-bottom">
 	    <article class="container">
 
-            <h1 class="text-center">User-Specific Navigation</h1>
+            <h1 class="text-center">Navigation</h1>
 
-            <p>You may want to show different navigation elements to users who are logged in versus those who are not. Simply include the following code in your <code>header.php</code> file:</p>
+            <p>You may want to show different navigation elements to users who are logged in versus those who are not.</p>
 
-            <pre><code class="language-php">&lt;?php if (is_user_logged_in()) : ?&gt;
-    &lt;!-- Logged In Navigation --&gt;
-&lt;?php else : ?&gt;
-    &lt;!-- Logged Out Navigation --&gt;
-&lt;?php endif; ?&gt;</code></pre>
+            <p>WordPress for Web Apps creates <code>* - Logged Out</code> versions of any navigation menus that are registered in your theme. Just use the drag-and-drop menu tool in the admin dashboard, and assign your navigation to the appropriate menu.</p>
 
-            <p>To display the current user's username, use this script:</p>
+            <p class="text-center"><img src="img/navigation-menu.png" title="Screenshot of the menu interface in the admin dashboard"></p>
 
-            <pre><code class="language-php">&lt;?php $current_user = wp_get_current_user(); echo $current_user-&gt;user_login; ?&gt;</code></pre>
+            <p>Menus without the <code>- Logged Out</code> suffix are only shown to logged-in users. If you don't assign logged-out menus, they show all pages by default.</p>
+
+
+            <h2 class="text-center">Logout Links</h2>
+
+            <p>WordPress provides a built-in logout link function:</p>
+
+            <pre><code class="language-php">&lt;a href="&lt;?php echo wp_logout_url(); ?&gt;"&gt;Sign Out&lt;/a&gt;</code></pre>
+
+            <p>Simply add that as the <code>href</code> value to any link to log a user out and redirect them to the homepage.</p>
+
+            <p>You can't use PHP scripts in the WordPress content editor, though. If you'd like to add a logout link that way, WordPress for Web Apps includes a shortcode you can use instead: <code>[wpwa_logout_url]</code>.</p>
+
+            <pre><code class="language-php">&lt;a href="[wpwa_logout_url]"&gt;Sign Out&lt;/a&gt;</code></pre>
+
+            <p>While you normally can't use shortcodes to add navigation menu links, WordPress for Web Apps let you use the logout shortcode.</p>
+
+            <p class="text-center"><img src="img/logout-shortcode.png" title="Screenshot of how to add a logout link to the navigation menu"></p>
+
+
+            <h2 class="text-center">Usernames</h2>
+
+            <p>WordPress also provides a simple way to display a user's username in a theme template file:</p>
+
+            <pre><code class="language-php">&lt;?php $current_user = wp_get_current_user(); echo $current_user->user_login; ?&gt;</code></pre>
+
+            <p>To display a username in the WordPress content editor, use the <code>[wpwa_display_username]</code> shortcode. Like the logout shortcode, you can use the display username shortcode in the navigation menu editor.</p>
+
+            <p class="text-center"><img src="img/username-shortcode.png" title="Screenshot of how to display a username in the navigation menu"></p>
 
             <hr>
 
@@ -63,16 +74,15 @@
                 <div class="grid-3">
                     <ol class="no-space-bottom">
                         <li><a href="installation.html">Installation</a></li>
+                        <li><a href="ux.html">User Experience</a></li>
                         <li><a href="forms.html">Forms</a></li>
-                        <li><a href="templates.html">Templates</a></li>
-                        <li><a href="registration.html">Registration Email</a></li>
                     </ol>
                 </div>
                 <div class="grid-3">
-                    <ol start="5">
-                        <li><a href="backend.html">Hiding the Back-End</a></li>
-                        <li><span class="text-muted">User-Specific Navigation</span></li>
-                        <li><a href="logout.html">Logout Links</a></li>
+                    <ol start="4">
+                        <li><a href="user-access.html">User Access</a></li>
+                        <li><span class="text-muted">Navigation</span></li>
+                        <li><a href="settings.html">Settings</a></li>
                     </ol>
                 </div>
             </div>
